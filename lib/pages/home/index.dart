@@ -7,14 +7,14 @@ import 'package:hook_up_rent/pages/home/tab_search/index.dart';
 List tabViewList = [
   const TabIndex(),
   const TabSearch(),
-  const TabInfo(),
+  // const TabInfo(),
   const TabProfile(),
 ];
 
 List<BottomNavigationBarItem> barItemList = [
   const BottomNavigationBarItem(label: '首页', icon: Icon(Icons.home)),
   const BottomNavigationBarItem(label: '搜索', icon: Icon(Icons.search)),
-  const BottomNavigationBarItem(label: '资讯', icon: Icon(Icons.info)),
+  // const BottomNavigationBarItem(label: '资讯', icon: Icon(Icons.info)),
   const BottomNavigationBarItem(label: '我的', icon: Icon(Icons.account_circle)),
 ];
 

@@ -26,8 +26,8 @@ class TabIndex extends StatelessWidget {
         children: const [
           CommonSwiper(),
           IndexNavigator(),
-          IndexRecommand(),
-          Info(showTitle: true),
+          // IndexRecommand(),
+          // Info(showTitle: true),
         ],
       ),
     );

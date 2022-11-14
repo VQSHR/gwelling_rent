@@ -24,10 +24,10 @@ class _TabInfoState extends State<TabInfo> {
       ),
       body: ListView(children: const [
         SizedBox(height: 15),
-        Info(),
-        Info(),
-        Info(),
-        Info(),
+        // Info(),
+        // Info(),
+        // Info(),
+        // Info(),
       ]),
     );
   }

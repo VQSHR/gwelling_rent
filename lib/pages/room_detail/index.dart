@@ -123,9 +123,7 @@ class _RoomDetailPageState extends State<RoomDetailPage> {
                   ],
                 ),
               ),
-              const CommonTitle('猜你喜欢'),
-              const Info(),
-              const SizedBox(height: 100),
+
             ],
           ),
           Positioned(
