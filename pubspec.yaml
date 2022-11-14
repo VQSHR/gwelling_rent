@@ -1,0 +1,59 @@
+name: hook_up_rent
+description: A new Flutter project.
+
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  # sdk: ">=2.18.0-19.0.dev <3.0.0"
+  sdk: ">=2.16.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+
+  fluro: ^2.0.3 # 路由框架
+  # flutter_swiper: ^1.1.6 # 轮播图
+  flutter_swiper_null_safety: ^1.0.2 # 轮播图空异常版
+  cached_network_image: ^3.2.0 # 图片缓存
+  fluttertoast: ^8.0.9 # 弹窗
+  image_picker: ^0.8.5 # 图片选择
+  share_plus: ^4.0.4 # 分享
+  dio: ^4.0.6 # 网络请求
+  get: ^4.6.1 # 状态管理
+  scoped_model: ^2.0.0-nullsafety.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^1.0.0
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: CommonIcon
+      fonts:
+        - asset: static/fonts/iconfont.ttf
+  assets:
+    - static/images/home_index_navigator_total.png
+    - static/images/home_index_navigator_map.png
+    - static/images/home_index_navigator_share.png
+    - static/images/home_index_navigator_rent.png
+    - static/images/home_index_recommend_1.png
+    - static/images/home_index_recommend_2.png
+    - static/images/home_index_recommend_3.png
+    - static/images/home_index_recommend_4.png
+    - static/icons/widget_search_bar_map.png
+    - static/images/home_profile_record.png
+    - static/images/home_profile_order.png
+    - static/images/home_profile_favor.png
+    - static/images/home_profile_id.png
+    - static/images/home_profile_message.png
+    - static/images/home_profile_contract.png
+    - static/images/home_profile_house.png
+    - static/images/home_profile_wallet.png
+    - static/images/loading.jpg
