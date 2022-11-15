@@ -25,6 +25,11 @@ dependencies:
   dio: ^4.0.6 # 网络请求
   get: ^4.6.1 # 状态管理
   scoped_model: ^2.0.0-nullsafety.0
+  firebase_auth: ^4.1.2
+  firebase_core: ^2.2.0
+  cloud_firestore: ^4.0.5
+  provider: ^6.0.4
+  firebase_ui_auth: ^1.0.5
 
 dev_dependencies:
   flutter_test:

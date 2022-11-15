@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:hook_up_rent/apis/request_api.dart';
@@ -22,19 +24,33 @@ class _RegisterPageState extends State<RegisterPage> {
       var username = usernameController.text;
       var password = passwordController.text;
       var repeatPassword = repeatPasswordController.text;
+
+
       if (username.isEmpty || password.isEmpty) {
-        CommonToast.showToast('用户名或密码不能为空!');
+        CommonToast.showToast('Username and password cannot be empty!');
         return;
       }
       if (password != repeatPassword) {
-        CommonToast.showToast('两次输入密码不一致');
+        CommonToast.showToast('Password does not match');
         return;
       }
 
+      var url = '/user/registered';
       var params = {'username': username, 'password': password};
-      var res = await DioHttp.of(context).post(RequestApi.REGISTER, params);
-      print(res.data);
-      Navigator.pushNamed(context, 'login');
+      var res = await DioHttp.of(context).post(url, params);
+      var resMap = jsonDecode(res.toString());
+
+      print(resMap['status']);
+      int status = resMap['status'];
+      String description = resMap['description'] ?? 'Error';
+      CommonToast.showToast(description);
+      if (status.toString().startsWith('2')) {
+        Navigator.of(context).pushReplacementNamed('login');
+        /*Store store = await Store.getInstance();
+      await store.setString(StoreKeys.token, token);*/
+      }
+
+
     }
 
     return Scaffold(
@@ -69,7 +85,7 @@ class _RegisterPageState extends State<RegisterPage> {
             const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () => _registerHandler(),
-              child: const Text('Login'),
+              child: const Text('Register'),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

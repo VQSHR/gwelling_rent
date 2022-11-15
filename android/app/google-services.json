@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "738569132461",
+    "project_id": "gwelling-ee276",
+    "storage_bucket": "gwelling-ee276.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738569132461:android:4980400b1563b601216924",
+        "android_client_info": {
+          "package_name": "com.example.hook_up_rent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "738569132461-8rg5gir57hv88lvjtrfddllo5aqk6f6a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRJssiekvWOZbA7i4of395PLqHRRkdcFo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "738569132461-8rg5gir57hv88lvjtrfddllo5aqk6f6a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

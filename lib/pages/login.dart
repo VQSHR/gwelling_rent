@@ -1,4 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:hook_up_rent/pages/utils/common_toast.dart';
+import 'package:hook_up_rent/pages/utils/dio_http.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -9,6 +13,38 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool _showPassword = false;
+
+  var usernameController = TextEditingController();
+  var passwordController = TextEditingController();
+
+  _loginHandle() async {
+    var username = usernameController.text;
+    var password = passwordController.text;
+
+    if (username.isEmpty || password.isEmpty) {
+      CommonToast.showToast('Username and password cannot be empty!');
+      return;
+    }
+    const url = '/user/login';
+    var params = {
+      'username': username,
+      'password': password
+    };
+
+    var res = await DioHttp.of(context).post(url, params);
+    var resMap = jsonDecode(res.toString());
+
+    int status = resMap['status'];
+    String description = resMap['description'] ?? 'Error';
+    CommonToast.showToast(description);
+    if (status.toString().startsWith('2')) {
+      String token = resMap['body']['token'];
+      /*Store store = await Store.getInstance();
+      await store.setString(StoreKeys.token, token);*/
+    }
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
