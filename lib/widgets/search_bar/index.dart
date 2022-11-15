@@ -53,25 +53,25 @@ class _SearchBarState extends State<SearchBar> {
         children: [
           // 是否显示位置
           if (widget.showLocation ?? false) // 默认为 false
-            Padding(
-              padding: const EdgeInsets.only(right: 10),
-              child: GestureDetector(
-                onTap: () {},
-                child: Row(
-                  children: const [
-                    Icon(
-                      Icons.room,
-                      color: Colors.green,
-                      size: 14,
-                    ),
-                    Text(
-                      '北京',
-                      style: TextStyle(color: Colors.black, fontSize: 14),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.only(right: 10),
+            //   child: GestureDetector(
+            //     onTap: () {},
+            //     child: Row(
+            //       children: const [
+            //         Icon(
+            //           Icons.room,
+            //           color: Colors.green,
+            //           size: 14,
+            //         ),
+            //         Text(
+            //           '北京',
+            //           style: TextStyle(color: Colors.black, fontSize: 14),
+            //         ),
+            //       ],
+            //     ),
+            //   ),
+            // ),
           // 返回按钮
           if (widget.goBackCallback != null)
             Padding(
@@ -115,7 +115,7 @@ class _SearchBarState extends State<SearchBar> {
                   contentPadding:
                       const EdgeInsets.only(top: 1, left: -10), // 负数
                   border: InputBorder.none,
-                  hintText: '请输入搜索词',
+                  hintText: 'Search',
                   hintStyle: const TextStyle(color: Colors.grey, fontSize: 14),
                   suffixIcon: GestureDetector(
                     onTap: () => _onClean(),
@@ -144,7 +144,7 @@ class _SearchBarState extends State<SearchBar> {
               child: GestureDetector(
                 onTap: (widget.onCancel ?? () {}) as GestureTapCallback,
                 child: const Text(
-                  '取消',
+                  'Cancel',
                   style: TextStyle(
                       fontSize: 14,
                       color: Colors.black,
@@ -153,12 +153,12 @@ class _SearchBarState extends State<SearchBar> {
               ),
             ),
           // 显示地图
-          if (widget.showMap ?? false)
-            const CommonImage(
-              'static/icons/widget_search_bar_map.png',
-              width: 40,
-              height: 40,
-            ),
+          //if (widget.showMap ?? false)
+            // const CommonImage(
+            //   'static/icons/widget_search_bar_map.png',
+            //   width: 40,
+            //   height: 40,
+            // ),
         ],
       ),
     );

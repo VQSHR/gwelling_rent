@@ -38,7 +38,7 @@ class _RegisterPageState extends State<RegisterPage> {
     }
 
     return Scaffold(
-      appBar: AppBar(title: const Text('注册')),
+      appBar: AppBar(title: const Text('Register')),
       body: SafeArea(
         minimum: const EdgeInsets.all(30),
         child: ListView(
@@ -46,41 +46,41 @@ class _RegisterPageState extends State<RegisterPage> {
             TextField(
               controller: usernameController,
               decoration: const InputDecoration(
-                labelText: '用户名',
-                hintText: '请输入用户名',
+                labelText: 'Username',
+                hintText: 'Username',
               ),
             ),
             const Padding(padding: EdgeInsets.all(10)),
             TextField(
               controller: passwordController,
               decoration: const InputDecoration(
-                labelText: '密码',
-                hintText: '请输入密码',
+                labelText: 'Password',
+                hintText: 'Password',
               ),
             ),
             const Padding(padding: EdgeInsets.all(10)),
             TextField(
               controller: repeatPasswordController,
               decoration: const InputDecoration(
-                labelText: '确认密码',
-                hintText: '请输入密码',
+                labelText: 'Password',
+                hintText: 'Password',
               ),
             ),
             const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () => _registerHandler(),
-              child: const Text('注册'),
+              child: const Text('Login'),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('已有账号，'),
+                const Text('Already have an account?'),
                 TextButton(
                   onPressed: () {
                     // Navigator.pushNamed(context, 'login');
                     Navigator.pushReplacementNamed(context, 'login');
                   },
-                  child: const Text('去登录~'),
+                  child: const Text('Login'),
                 )
               ],
             ),

@@ -163,22 +163,22 @@ class _FilterBarState extends State<FilterBar> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Item(
-            title: '区域',
+            title: 'Area',
             isActive: isAreaActive,
             onTap: _onAreaChange,
           ),
           Item(
-            title: '方式',
+            title: 'Rent Type',
             isActive: isRentTypeActive,
             onTap: _onRentTypeChange,
           ),
           Item(
-            title: '租金',
+            title: 'Price',
             isActive: isPriceActive,
             onTap: _onPriceChange,
           ),
           Item(
-            title: '筛选',
+            title: 'Filter',
             isActive: isFilterActive,
             onTap: _onFilterChange,
           ),

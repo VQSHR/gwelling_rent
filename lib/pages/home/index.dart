@@ -12,10 +12,10 @@ List tabViewList = [
 ];
 
 List<BottomNavigationBarItem> barItemList = [
-  const BottomNavigationBarItem(label: '首页', icon: Icon(Icons.home)),
-  const BottomNavigationBarItem(label: '搜索', icon: Icon(Icons.search)),
-  // const BottomNavigationBarItem(label: '资讯', icon: Icon(Icons.info)),
-  const BottomNavigationBarItem(label: '我的', icon: Icon(Icons.account_circle)),
+  const BottomNavigationBarItem(label: 'Home', icon: Icon(Icons.home)),
+  const BottomNavigationBarItem(label: 'Search', icon: Icon(Icons.search)),
+  // const BottomNavigationBarItem(label: 'Info', icon: Icon(Icons.info)),
+  const BottomNavigationBarItem(label: 'Profile', icon: Icon(Icons.account_circle)),
 ];
 
 class HomePage extends StatefulWidget {

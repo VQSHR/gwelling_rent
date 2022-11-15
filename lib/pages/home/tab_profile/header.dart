@@ -35,17 +35,17 @@ class Header extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () => Navigator.pushNamed(context, 'login'),
-                    child: Text('登录', style: loginRegisterStyle),
+                    child: Text('Login', style: loginRegisterStyle),
                   ),
                   Text(' / ', style: loginRegisterStyle),
                   GestureDetector(
                     onTap: () => Navigator.pushNamed(context, 'register'),
-                    child: Text('注册', style: loginRegisterStyle),
+                    child: Text('Register', style: loginRegisterStyle),
                   ),
                 ],
               ),
               const Text(
-                '登录后可以体验更多',
+                'Login for more features',
                 style: TextStyle(color: Colors.white),
               ),
             ],

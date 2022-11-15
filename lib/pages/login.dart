@@ -12,19 +12,19 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('登录')),
+      appBar: AppBar(title: const Text('Login')),
       body: SafeArea(
         minimum: const EdgeInsets.all(30),
         child: ListView(children: [
           const TextField(
-            decoration: InputDecoration(labelText: '用户名', hintText: '请输入用户名'),
+            decoration: InputDecoration(labelText: 'Username', hintText: 'Username'),
           ),
           const Padding(padding: EdgeInsets.all(10)),
           TextField(
             obscureText: !_showPassword,
             decoration: InputDecoration(
-                labelText: '密码',
-                hintText: '请输入密码',
+                labelText: 'Password',
+                hintText: 'Password',
                 suffixIcon: IconButton(
                     onPressed: () {
                       setState(() {
@@ -40,16 +40,16 @@ class _LoginPageState extends State<LoginPage> {
               onPressed: () {
                 // Todo(),
               },
-              child: const Text('登录')),
+              child: const Text('Login')),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text('还没有账号，'),
+              const Text('No account?'),
               TextButton(
                   onPressed: () {
                     Navigator.pushReplacementNamed(context, 'register');
                   },
-                  child: const Text('去注册~'))
+                  child: const Text('Register'))
             ],
           ),
         ]),

@@ -7,15 +7,15 @@ class SettingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('设置')),
+      appBar: AppBar(title: const Text('Settings')),
       body: ListView(
         children: [
           ElevatedButton(
             // style: ElevatedButton.styleFrom(primary: Colors.red),
             onPressed: () {
-              CommonToast.showToast('已经退出登录。');
+              CommonToast.showToast('Already logged out');
             },
-            child: const Text('退出登录'),
+            child: const Text('Logout'),
           )
         ],
       ),

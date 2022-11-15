@@ -38,10 +38,10 @@ class _RoomDetailPageState extends State<RoomDetailPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('房屋编号：${item.id}'),
+        title: Text('Room ID：${item.id}'),
         actions: [
           IconButton(
-            onPressed: () => Share.share('https://www.baidu.com'),
+            onPressed: () => Share.share('https://www.google.com'),
             icon: const Icon(Icons.share),
           )
         ],
@@ -51,18 +51,18 @@ class _RoomDetailPageState extends State<RoomDetailPage> {
           ListView(
             children: [
               CommonSwiper(images: data.houseImgs),
-              CommonTitle(data.title),
+              CommonTitle(item.title),
               Container(
                 padding: const EdgeInsets.only(left: 10),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
-                      data.price.toString(),
+                      item.price.toString(),
                       style: const TextStyle(fontSize: 20, color: Colors.pink),
                     ),
                     const Text(
-                      '元/月(押一付三)',
+                      '元/月',
                       style: TextStyle(fontSize: 14, color: Colors.pink),
                     ),
                   ],
@@ -72,7 +72,7 @@ class _RoomDetailPageState extends State<RoomDetailPage> {
                 padding: const EdgeInsets.only(left: 10, top: 6, bottom: 6),
                 child: Wrap(
                   spacing: 4,
-                  children: data.tags.map((item) => CommonTag(item)).toList(),
+                  children: item.tags.map((item) => CommonTag(item)).toList(),
                 ),
               ),
               const Divider(color: Colors.grey, indent: 10, endIndent: 10),
@@ -95,7 +95,7 @@ class _RoomDetailPageState extends State<RoomDetailPage> {
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Column(
                   children: [
-                    Text(data.subTitle, maxLines: showAllText ? 5 : null),
+                    Text(item.subTitle, maxLines: showAllText ? 5 : null),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
