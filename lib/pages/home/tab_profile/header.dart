@@ -1,4 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../../main.dart';
+import 'authentication.dart';
 
 var loginRegisterStyle = const TextStyle(fontSize: 20, color: Colors.white);
 
@@ -33,9 +38,16 @@ class Header extends StatelessWidget {
               const SizedBox(height: 12),
               Row(
                 children: [
-                  GestureDetector(
-                    onTap: () => Navigator.pushNamed(context, 'login'),
-                    child: Text('Login', style: loginRegisterStyle),
+                  // GestureDetector(
+                  //   onTap: () => Navigator.pushNamed(context, 'login'),
+                  //   child: Text('Login', style: loginRegisterStyle),
+                  // ),
+                  Consumer<ApplicationState>(
+                    builder: (context, appState, _) => AuthFunc(
+                        loggedIn: appState.loggedIn,
+                        signOut: () {
+                          FirebaseAuth.instance.signOut();
+                        }),
                   ),
                   Text(' / ', style: loginRegisterStyle),
                   GestureDetector(

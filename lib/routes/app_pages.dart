@@ -1,3 +1,5 @@
+import 'package:firebase_ui_auth/firebase_ui_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:hook_up_rent/pages/home/index.dart';
 import 'package:hook_up_rent/pages/login.dart';
@@ -20,7 +22,35 @@ class AppPages {
     ),
     GetPage(
       name: Routes.LOGIN,
-      page: () => const LoginPage(),
+      page: () => SignInScreen(
+        actions: [
+          ForgotPasswordAction(((context, email) {
+            Navigator.of(context)
+                .pushNamed('/forgot-password', arguments: {'email': email});
+          })),
+          AuthStateChangeAction(((context, state) {
+            if (state is SignedIn || state is UserCreated) {
+              var user = (state is SignedIn)
+                  ? state.user
+                  : (state as UserCreated).credential.user;
+              if (user == null) {
+                return;
+              }
+              if (state is UserCreated) {
+                user.updateDisplayName(user.email!.split('@')[0]);
+              }
+              if (!user.emailVerified) {
+                user.sendEmailVerification();
+                const snackBar = SnackBar(
+                    content: Text(
+                        'Please check your email to verify your email address'));
+                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+              }
+              Navigator.of(context).pushReplacementNamed('/home');
+            }
+          })),
+        ],
+      ),
     ),
     GetPage(
       name: Routes.REGISTER,
@@ -47,6 +77,19 @@ class AppPages {
           page: () => const RoomDetailPage(),
         ),
       ],
+    ),
+    GetPage(
+        name: Routes.PROFILE,
+        page: () => ProfileScreen(
+              providers: [],
+              actions: [
+                SignedOutAction(
+                  ((context) {
+                    Navigator.of(context).pushReplacementNamed('/home');
+                  }),
+                ),
+              ],
+            )
     ),
   ];
 }

@@ -19,4 +19,7 @@ abstract class Routes {
   static const ROOM_DETAIL = '/room_detail';
   // 测试页面
   static const TEST = '/test';
+
+  static const FORGOT_PASSWORD = '/forgot-password';
+  static const PROFILE = '/profile';
 }
