@@ -19,7 +19,7 @@ class Header extends StatelessWidget {
   Container _notLoginBuilder(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 10, left: 20, right: 10),
-      height: 95,
+      height: 110,
       decoration: const BoxDecoration(color: Colors.green),
       child: Row(
         children: [
@@ -49,17 +49,17 @@ class Header extends StatelessWidget {
                           FirebaseAuth.instance.signOut();
                         }),
                   ),
-                  Text(' / ', style: loginRegisterStyle),
-                  GestureDetector(
-                    onTap: () => Navigator.pushNamed(context, 'register'),
-                    child: Text('Register', style: loginRegisterStyle),
-                  ),
+                  // Text(' / ', style: loginRegisterStyle),
+                  // GestureDetector(
+                  //   onTap: () => Navigator.pushNamed(context, 'register'),
+                  //   child: Text('Register', style: loginRegisterStyle),
+                  // ),
                 ],
               ),
-              const Text(
-                'Login for more features',
-                style: TextStyle(color: Colors.white),
-              ),
+              // const Text(
+              //   'Login for more features',
+              //   style: TextStyle(color: Colors.white),
+              // ),
             ],
           )
         ],

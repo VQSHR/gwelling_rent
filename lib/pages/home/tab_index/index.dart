@@ -1,12 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hook_up_rent/pages/home/info/index.dart';
 import 'package:hook_up_rent/pages/home/tab_index/index_navigator.dart';
 import 'package:hook_up_rent/pages/home/tab_index/index_recommand.dart';
 import 'package:hook_up_rent/widgets/common_swiper.dart';
 import 'package:hook_up_rent/widgets/search_bar/index.dart';
 
-class TabIndex extends StatelessWidget {
-  const TabIndex({Key? key}) : super(key: key);
+class TabIndex extends StatefulWidget {
+  const TabIndex({super.key});
+
+  @override
+  State<TabIndex> createState() => _TabIndexState();
+}
+
+class _TabIndexState extends State<TabIndex> {
+
+  late GoogleMapController mapController;
+
+  final LatLng _center = const LatLng(45.521563, -122.677433);
+
+  void _onMapCreated(GoogleMapController controller) {
+    mapController = controller;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,14 +37,23 @@ class TabIndex extends StatelessWidget {
           },
         ),
       ),
-      body: ListView(
-        children: const [
-          CommonSwiper(),
-          IndexNavigator(),
-          // IndexRecommand(),
-          // Info(showTitle: true),
-        ],
+      body: GoogleMap(
+        onMapCreated: _onMapCreated,
+        initialCameraPosition: CameraPosition(
+          target: _center,
+          zoom: 11.0,
+        ),
       ),
+      // body: ListView(
+      //   children: const [
+      //     CommonSwiper(),
+      //     IndexNavigator(),
+      //     // IndexRecommand(),
+      //     // Info(showTitle: true),
+      //   ],
+      // ),
     );
   }
 }
+
+
