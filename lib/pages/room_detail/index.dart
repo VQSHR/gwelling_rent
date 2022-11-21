@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hook_up_rent/pages/home/info/index.dart';
 import 'package:hook_up_rent/pages/home/tab_search/data_list.dart';
-import 'package:hook_up_rent/pages/room_detail/dart.dart';
+import 'package:hook_up_rent/pages/room_detail/data.dart';
 import 'package:hook_up_rent/widgets/common_swiper.dart';
 import 'package:hook_up_rent/widgets/common_tag.dart';
 import 'package:hook_up_rent/widgets/common_title.dart';

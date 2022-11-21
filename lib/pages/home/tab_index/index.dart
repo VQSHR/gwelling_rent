@@ -17,7 +17,7 @@ class _TabIndexState extends State<TabIndex> {
 
   late GoogleMapController mapController;
 
-  final LatLng _center = const LatLng(45.521563, -122.677433);
+  final LatLng _center = const LatLng(38.89971241258084, -77.0486537922262);
 
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;

@@ -23,26 +23,26 @@ class GeneralType {
 }
 
 List<GeneralType> areaList = [
-  GeneralType('区域1', '11'),
-  GeneralType('区域2', '22'),
+  GeneralType('Area1', '11'),
+  GeneralType('Area2', '22'),
 ];
 List<GeneralType> priceList = [
-  GeneralType('价格1', '22'),
-  GeneralType('价格2', 'aa'),
+  GeneralType('Price1', '22'),
+  GeneralType('Price2', 'aa'),
 ];
 List<GeneralType> rentTypeList = [
-  GeneralType('出租类型1', 'bb'),
-  GeneralType('出租类型2', '22'),
+  GeneralType('rentType1', 'bb'),
+  GeneralType('rentType2', '22'),
 ];
 List<GeneralType> roomTypeList = [
-  GeneralType('房屋类型1', '11'),
-  GeneralType('房屋类型2', '22'),
+  GeneralType('roomType1', '11'),
+  GeneralType('roomType2', '22'),
 ];
 List<GeneralType> orientedList = [
-  GeneralType('方向1', '99'),
-  GeneralType('方向2', 'cc'),
+  GeneralType('Facing1', '99'),
+  GeneralType('Facing2', 'cc'),
 ];
 List<GeneralType> floorList = [
-  GeneralType('楼层1', 'aa'),
-  GeneralType('楼层2', 'bb'),
+  GeneralType('Floor1', 'aa'),
+  GeneralType('Floor2', 'bb'),
 ];

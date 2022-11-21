@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hook_up_rent/pages/home/info/index.dart';
-import 'package:hook_up_rent/pages/home/tab_profile/advertisement.dart';
+
 import 'package:hook_up_rent/pages/home/tab_profile/function_button.dart';
 import 'package:hook_up_rent/pages/home/tab_profile/header.dart';
 

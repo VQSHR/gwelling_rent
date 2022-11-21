@@ -1,6 +1,7 @@
 import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
+import 'package:hook_up_rent/pages/forgot_password.dart';
 import 'package:hook_up_rent/pages/home/index.dart';
 import 'package:hook_up_rent/pages/login.dart';
 import 'package:hook_up_rent/pages/register.dart';
@@ -15,6 +16,7 @@ part 'app_routes.dart';
 // ignore_for_file: constant_identifier_names
 class AppPages {
   static const INITIAL = Routes.HOME;
+
   static final routePages = [
     GetPage(
       name: Routes.HOME,
@@ -62,7 +64,7 @@ class AppPages {
     ),
     GetPage(
       name: Routes.SEARCH,
-      page: () => const PageContent(name: '搜索'),
+      page: () => const PageContent(name: 'Search'),
     ),
     GetPage(
       name: Routes.ROOM_MANAGE,
@@ -89,7 +91,10 @@ class AppPages {
                   }),
                 ),
               ],
-            )
-    ),
+            )),
+    GetPage(
+        name: Routes.FORGOT_PASSWORD,
+        page: () => const ForgotPasswordPage()
+    )
   ];
 }
