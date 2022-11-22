@@ -10,7 +10,7 @@ class RoomDetailData {
   List<String> houseImgs;
   List<String> tags;
   List<String> oriented;
-  List<String> applicances;
+  List<String> appliances;
 
   RoomDetailData({
     required this.id,
@@ -24,7 +24,7 @@ class RoomDetailData {
     required this.price,
     required this.floor,
     required this.oriented,
-    required this.applicances,
+    required this.appliances,
   });
 }
 
@@ -39,7 +39,7 @@ var defaultData = RoomDetailData(
     price: 3000,
     oriented: ['南'],
     roomType: '三室',
-    applicances: ['衣柜', '洗衣机'],
+    appliances: ['衣柜', '洗衣机'],
     tags: ["近地铁", "集中供暖", "新上", "随时看房"],
     houseImgs: [
       'http://ww3.sinaimg.cn/large/006y8mN6ly1g6e2tdgve1j30ku0bsn75.jpg',

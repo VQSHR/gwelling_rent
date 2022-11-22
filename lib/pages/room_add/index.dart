@@ -30,7 +30,7 @@ class _RoomAddPageState extends State<RoomAddPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Publishing'),
+        title: const Text('Posting'),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: CommonFloatingActionButton(
@@ -38,98 +38,98 @@ class _RoomAddPageState extends State<RoomAddPage> {
           () {}),
       body: ListView(
         children: [
-          const CommonTitle('房源信息'),
+          const CommonTitle('Info'),
+          // CommonFormItem(
+          //   label: 'community',
+          //   contentBuilder: (context) {
+          //     return GestureDetector(
+          //       behavior: HitTestBehavior.translucent,
+          //       onTap: () {
+          //         Navigator.pushNamed(context, 'search');
+          //       },
+          //       child: SizedBox(
+          //         height: 40,
+          //         child: Row(
+          //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //             children: const [
+          //               Text(
+          //                 'Select community',
+          //                 style: TextStyle(fontSize: 16),
+          //               ),
+          //               Icon(Icons.keyboard_arrow_right)
+          //             ]),
+          //       ),
+          //     );
+          //   },
+          // ),
           CommonFormItem(
-            label: '小区',
-            contentBuilder: (context) {
-              return GestureDetector(
-                behavior: HitTestBehavior.translucent,
-                onTap: () {
-                  Navigator.pushNamed(context, 'search');
-                },
-                child: SizedBox(
-                  height: 40,
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Text(
-                          '请选择小区',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                        Icon(Icons.keyboard_arrow_right)
-                      ]),
-                ),
-              );
-            },
-          ),
-          CommonFormItem(
-            label: '租金',
-            suffixText: '元/月',
-            hintText: '请输入租金',
+            label: 'Rent Price',
+            suffixText: 'USD/month',
+            hintText: 'Enter monthly rent',
             controller: TextEditingController(),
           ),
           CommonFormItem(
-            label: '大小',
-            suffixText: '平方米',
-            hintText: '请输入房屋大小',
+            label: 'Area',
+            suffixText: 'sqr ft',
+            hintText: 'Enter room area',
             controller: TextEditingController(),
           ),
-          CommonRadioFormItem(
-            label: '租凭方式',
-            options: const ['合租', '整租'],
-            value: rentType,
-            onChange: (index) {
-              setState(() => rentType = index!);
-            },
-          ),
+          // CommonRadioFormItem(
+          //   label: 'Rent Type',
+          //   options: const ['partial', 'whole'],
+          //   value: rentType,
+          //   onChange: (index) {
+          //     setState(() => rentType = index!);
+          //   },
+          // ),
           CommonSelectFormItem(
-            label: '户型',
+            label: 'Room Type',
             value: roomType,
             onChange: (val) {
               setState(() => roomType = val!);
             },
-            options: const ['一室', '二室', '三室', '四室'],
+            options: const ['1', '2', '3', '4'],
           ),
           CommonSelectFormItem(
-            label: '楼层',
+            label: 'floor',
             value: floor,
             onChange: (val) {
               setState(() => floor = val!);
             },
-            options: const ['高楼层', '中楼层', '低楼层'],
+            options: const ['high', 'mid', 'low'],
           ),
-          CommonSelectFormItem(
-            label: '朝向',
-            value: oriented,
-            onChange: (val) {
-              setState(() => oriented = val!);
-            },
-            options: const ['东', '南', '西', '北'],
-          ),
-          CommonRadioFormItem(
-            label: '装修',
-            options: const ['精装', '简装'],
-            value: decorationType,
-            onChange: (index) {
-              setState(() => decorationType = index!);
-            },
-          ),
-          const CommonTitle('房屋图像'),
+          // CommonSelectFormItem(
+          //   label: 'Facing',
+          //   value: oriented,
+          //   onChange: (val) {
+          //     setState(() => oriented = val!);
+          //   },
+          //   options: const ['E', 'S', 'W', 'N'],
+          // ),
+          // CommonRadioFormItem(
+          //   label: '装修',
+          //   options: const ['精装', '简装'],
+          //   value: decorationType,
+          //   onChange: (index) {
+          //     setState(() => decorationType = index!);
+          //   },
+          // ),
+          const CommonTitle('Images'),
           const CommonImagePicker(),
-          const CommonTitle('房屋标题'),
+          const CommonTitle('Title'),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: TextField(
               controller: titleController,
               decoration: const InputDecoration(
-                hintText: '请输入标题（例如：整组，小区名 2 室 2000 元）',
+                hintText: 'Enter title',
                 border: InputBorder.none,
               ),
             ),
           ),
-          const CommonTitle('房屋配置'),
+          const CommonTitle('Appliances'),
           RoomAppliance((data) {}),
-          const CommonTitle('房屋描述'),
+          const CommonTitle('Description'),
           Container(
             margin: const EdgeInsets.only(bottom: 100),
             padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -137,7 +137,7 @@ class _RoomAddPageState extends State<RoomAddPage> {
               controller: descController,
               maxLines: 5,
               decoration: const InputDecoration(
-                hintText: '请输入房屋描述信息',
+                hintText: 'Enter Description',
                 border: InputBorder.none,
               ),
             ),

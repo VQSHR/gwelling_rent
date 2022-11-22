@@ -33,7 +33,7 @@ class RoomListItemWidget extends StatelessWidget {
                       maxLines: 1, overflow: TextOverflow.ellipsis),
                   Wrap(children: data.tags.map((e) => CommonTag(e)).toList()),
                   Text(
-                    '${data.price} 元/每月',
+                    '${data.price} USD/month',
                     style: const TextStyle(
                         color: Colors.orange,
                         fontSize: 16,

@@ -89,7 +89,7 @@ class _RoomDetailPageState extends State<RoomDetailPage> {
                 ),
               ),
               const CommonTitle('房屋配置'),
-              RoomApplicanceList(data.applicances),
+              RoomApplianceList(data.appliances),
               const CommonTitle('房屋概况'),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10),

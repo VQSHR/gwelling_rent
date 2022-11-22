@@ -13,16 +13,16 @@ class RoomApplianceItem {
 }
 
 const List<RoomApplianceItem> _dataList = [
-  RoomApplianceItem('衣柜', 0xe918, false),
-  RoomApplianceItem('洗衣机', 0xe917, false),
-  RoomApplianceItem('空调', 0xe90d, false),
-  RoomApplianceItem('天然气', 0xe90f, false),
-  RoomApplianceItem('冰箱', 0xe907, false),
-  RoomApplianceItem('暖气', 0xe910, false),
-  RoomApplianceItem('电视', 0xe908, false),
-  RoomApplianceItem('热水器', 0xe912, false),
-  RoomApplianceItem('宽带', 0xe90e, false),
-  RoomApplianceItem('沙发', 0xe913, false),
+  RoomApplianceItem('Closet', 0xe918, false),
+  RoomApplianceItem('Washer', 0xe917, false),
+  RoomApplianceItem('AC', 0xe90d, false),
+  RoomApplianceItem('Gas', 0xe90f, false),
+  RoomApplianceItem('Fridge', 0xe907, false),
+  RoomApplianceItem('Radiator', 0xe910, false),
+  RoomApplianceItem('TV', 0xe908, false),
+  RoomApplianceItem('Shower', 0xe912, false),
+  RoomApplianceItem('Internet', 0xe90e, false),
+  RoomApplianceItem('Couch', 0xe913, false),
 ];
 
 class RoomAppliance extends StatefulWidget {
@@ -82,10 +82,10 @@ class _RoomApplianceState extends State<RoomAppliance> {
   }
 }
 
-class RoomApplicanceList extends StatelessWidget {
+class RoomApplianceList extends StatelessWidget {
   final List<String> list;
 
-  const RoomApplicanceList(this.list, {Key? key}) : super(key: key);
+  const RoomApplianceList(this.list, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +95,7 @@ class RoomApplicanceList extends StatelessWidget {
     if (showList.isEmpty) {
       return Container(
         padding: const EdgeInsets.only(left: 10),
-        child: const Text('暂无房屋配置信息'),
+        child: const Text('No appliance info'),
       );
     }
 
