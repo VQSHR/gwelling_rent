@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:hook_up_rent/pages/home/tab_index/index_recommand_data.dart';
-import 'package:hook_up_rent/pages/home/tab_index/index_recommand_item.dart';
+import 'package:hook_up_rent/pages/home/tab_index/index_recommend_data.dart';
+import 'package:hook_up_rent/pages/home/tab_index/index_recommend_item.dart';
 
-class IndexRecommand extends StatelessWidget {
+class IndexRecommend extends StatelessWidget {
   final List<IndexRecommendItem> dataList;
 
-  const IndexRecommand({
+  const IndexRecommend({
     Key? key,
     this.dataList = indexRecommendData,
   }) : super(key: key);

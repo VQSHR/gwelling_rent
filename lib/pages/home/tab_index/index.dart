@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hook_up_rent/pages/home/info/index.dart';
 import 'package:hook_up_rent/pages/home/tab_index/index_navigator.dart';
-import 'package:hook_up_rent/pages/home/tab_index/index_recommand.dart';
+import 'package:hook_up_rent/pages/home/tab_index/index_recommend.dart';
 import 'package:hook_up_rent/widgets/common_swiper.dart';
 import 'package:hook_up_rent/widgets/search_bar/index.dart';
 
