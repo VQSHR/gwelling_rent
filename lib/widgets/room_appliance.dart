@@ -85,13 +85,12 @@ class _RoomApplianceState extends State<RoomAppliance> {
 class RoomApplianceList extends StatelessWidget {
   final List<String> list;
 
-  const RoomApplianceList(this.list, {Key? key}) : super(key: key);
+  const RoomApplianceList({super.key, required this.list});
 
   @override
   Widget build(BuildContext context) {
     var showList =
         _dataList.where((item) => list.contains(item.title)).toList();
-    showList = Random().nextInt(5) % 2 == 0 ? [] : showList;
     if (showList.isEmpty) {
       return Container(
         padding: const EdgeInsets.only(left: 10),

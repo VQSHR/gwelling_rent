@@ -1,10 +1,33 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:hook_up_rent/pages/home/tab_search/data_list.dart';
 import 'package:hook_up_rent/widgets/common_floating_button.dart';
 import 'package:hook_up_rent/widgets/root_list_item_widget.dart';
 
-class RoomManagePage extends StatelessWidget {
+import 'operation.dart';
+
+class RoomManagePage extends StatefulWidget {
   const RoomManagePage({Key? key}) : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() => _RoomManagePageState();
+}
+
+class _RoomManagePageState extends State<RoomManagePage> {
+  List<RoomListItemData> availableDataList = [];
+  _getData() async {
+    var dataList = await Firestore.getAllEntries();
+    setState(() {
+      availableDataList = dataList;
+    });
+  }
+
+  @override
+  void initState() {
+    Timer(Duration.zero, _getData);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +37,7 @@ class RoomManagePage extends StatelessWidget {
       child: Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: CommonFloatingActionButton(
-          'Publish',
+          'Post',
           () => Navigator.pushNamed(context, 'room_manage/room_add'),
         ),
         appBar: AppBar(
@@ -26,12 +49,14 @@ class RoomManagePage extends StatelessWidget {
         ),
         body: TabBarView(children: [
           ListView(
-            children:
-                dataList.map((item) => RoomListItemWidget(data: item)).toList(),
+            children: availableDataList
+                .map((item) => RoomListItemWidget(data: item))
+                .toList(),
           ),
           ListView(
-            children:
-                dataList.map((item) => RoomListItemWidget(data: item)).toList(),
+            children: availableDataList
+                .map((item) => RoomListItemWidget(data: item))
+                .toList(),
           )
         ]),
       ),

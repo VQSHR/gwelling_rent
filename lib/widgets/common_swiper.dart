@@ -25,14 +25,14 @@ class CommonSwiper extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.width * imageWidth / imageHeight,
       child: Swiper(
-        autoplay: true,
+        autoplay: false,
         itemBuilder: (BuildContext context, int index) {
           return CommonImage(
             images[index],
             fit: BoxFit.fill,
           );
         },
-        itemCount: 3,
+        itemCount: images.length,
         pagination: const SwiperPagination(),
       ),
     );

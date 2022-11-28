@@ -17,7 +17,7 @@ class RoomListItemWidget extends StatelessWidget {
         padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
         child: Row(
           children: [
-            CommonImage(data.imageUrl, width: 132.5, height: 90),
+            CommonImage(data.imageUrl, width: 132, height: 90),
             const SizedBox(width: 10),
             Expanded(
               child: Column(
@@ -29,9 +29,9 @@ class RoomListItemWidget extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(fontWeight: FontWeight.w600),
                   ),
-                  Text(data.subTitle,
+                  Text(data.location,
                       maxLines: 1, overflow: TextOverflow.ellipsis),
-                  Wrap(children: data.tags.map((e) => CommonTag(e)).toList()),
+                  //Wrap(children: data.tags.map((e) => CommonTag(e)).toList()),
                   Text(
                     '${data.price} USD/month',
                     style: const TextStyle(

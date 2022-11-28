@@ -13,7 +13,7 @@ class FilterDrawer extends StatelessWidget {
         .selectedList
         .toList();
     var dataList = ScopedModelHelper.getModel<FilterBarModel>(context).dataList;
-    if (dataList != null) {
+    if (dataList!=null) {
       roomTypeList = dataList['roomTypeList']!;
       orientedList = dataList['orientedList']!;
       floorList = dataList['floorList']!;
@@ -28,19 +28,19 @@ class FilterDrawer extends StatelessWidget {
       child: SafeArea(
         child: ListView(
           children: [
-            const CommonTitle('户型'),
+            const CommonTitle('roomType'),
             FilterDrawerItem(
               list: roomTypeList,
               selectIds: selectIds,
               onChange: _onChange,
             ),
-            const CommonTitle('朝向'),
+            const CommonTitle('Orientation'),
             FilterDrawerItem(
               list: orientedList,
               selectIds: selectIds,
               onChange: _onChange,
             ),
-            const CommonTitle('楼层'),
+            const CommonTitle('Floor'),
             FilterDrawerItem(
               list: floorList,
               selectIds: selectIds,

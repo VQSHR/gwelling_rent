@@ -27,13 +27,13 @@ class CommonPicker {
                       onPressed: () {
                         Navigator.of(context).pop();
                       },
-                      child: const Text('取消'),
+                      child: const Text('Cancel'),
                     ),
                     TextButton(
                       onPressed: () {
                         Navigator.of(context).pop(controller.selectedItem);
                       },
-                      child: const Text('确定'),
+                      child: const Text('Confirm'),
                     ),
                   ],
                 ),

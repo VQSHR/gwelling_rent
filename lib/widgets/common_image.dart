@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-final networkUriReg = RegExp('^http'); // 网络图片正则
-final localUriReg = RegExp('^static'); // 本地图片正则
+final networkUriReg = RegExp('^http');
+final localUriReg = RegExp('^static');
 
 class CommonImage extends StatelessWidget {
   final String src;
@@ -35,7 +35,7 @@ class CommonImage extends StatelessWidget {
         fit: fit,
       );
     }
-    assert(false, '图片地址 src 不合法');
+    assert(false, 'illegal image src address');
     return Container();
   }
 }

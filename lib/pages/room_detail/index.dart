@@ -38,7 +38,7 @@ class _RoomDetailPageState extends State<RoomDetailPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Room ID：${item.id}'),
+        title: const Text('Room Detail'),
         actions: [
           IconButton(
             onPressed: () => Share.share('https://www.google.com'),
@@ -50,7 +50,7 @@ class _RoomDetailPageState extends State<RoomDetailPage> {
         children: [
           ListView(
             children: [
-              CommonSwiper(images: data.houseImgs),
+              CommonSwiper(images: [item.imageUrl]),
               CommonTitle(item.title),
               Container(
                 padding: const EdgeInsets.only(left: 10),
@@ -62,40 +62,40 @@ class _RoomDetailPageState extends State<RoomDetailPage> {
                       style: const TextStyle(fontSize: 20, color: Colors.pink),
                     ),
                     const Text(
-                      '元/月',
+                      'USD/month',
                       style: TextStyle(fontSize: 14, color: Colors.pink),
                     ),
                   ],
                 ),
               ),
-              Container(
-                padding: const EdgeInsets.only(left: 10, top: 6, bottom: 6),
-                child: Wrap(
-                  spacing: 4,
-                  children: item.tags.map((item) => CommonTag(item)).toList(),
-                ),
-              ),
+              // Container(
+              //   padding: const EdgeInsets.only(left: 10, top: 6, bottom: 6),
+              //   child: Wrap(
+              //     spacing: 4,
+              //     children: item.tags.map((item) => CommonTag(item)).toList(),
+              //   ),
+              // ),
               const Divider(color: Colors.grey, indent: 10, endIndent: 10),
               Container(
                 margin: const EdgeInsets.only(left: 10, right: 10, top: 6),
                 child: Wrap(
                   runSpacing: 10,
                   children: [
-                    BaseInfoItem('面积：${data.size}平方米'),
-                    BaseInfoItem('楼层：${data.floor}'),
-                    BaseInfoItem('户型：${data.roomType}'),
-                    const BaseInfoItem('装修：精装'),
+                    BaseInfoItem('Area：${item.area} sqr ft'),
+                    //BaseInfoItem('Floor：${data.floor}'),
+                    BaseInfoItem('Room Type：${item.roomType}'),
+                    //const BaseInfoItem('装修：精装'),
                   ],
                 ),
               ),
-              const CommonTitle('房屋配置'),
-              RoomApplianceList(data.appliances),
-              const CommonTitle('房屋概况'),
+              const CommonTitle('Appliances'),
+              RoomApplianceList(list: item.appliances),
+              const CommonTitle('Description'),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Column(
                   children: [
-                    Text(item.subTitle, maxLines: showAllText ? 5 : null),
+                    Text(item.description, maxLines: showAllText ? 5 : null),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -106,7 +106,7 @@ class _RoomDetailPageState extends State<RoomDetailPage> {
                             }),
                             child: Row(
                               children: [
-                                Text(showTextTool ? '展开' : '收起'),
+                                Text(showTextTool ? 'Expand' : 'Fold'),
                                 Icon(showAllText
                                     ? Icons.keyboard_arrow_down
                                     : Icons.keyboard_arrow_up)
@@ -117,7 +117,7 @@ class _RoomDetailPageState extends State<RoomDetailPage> {
                           Container(),
                         GestureDetector(
                             onTap: () => Navigator.pushNamed(context, 'test'),
-                            child: const Text('举报')),
+                            child: const Text('Report')),
                       ],
                     )
                   ],
@@ -126,7 +126,7 @@ class _RoomDetailPageState extends State<RoomDetailPage> {
 
             ],
           ),
-          Positioned(
+          /*Positioned(
             width: MediaQuery.of(context).size.width,
             height: 100,
             bottom: 0,
@@ -195,7 +195,7 @@ class _RoomDetailPageState extends State<RoomDetailPage> {
                 ],
               ),
             ),
-          )
+          )*/
         ],
       ),
     );

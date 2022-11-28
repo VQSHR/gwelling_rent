@@ -1,9 +1,14 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:hook_up_rent/pages/home/tab_search/data_list.dart';
 import 'package:hook_up_rent/pages/home/tab_search/filter_bar/filter_drawer.dart';
 import 'package:hook_up_rent/pages/home/tab_search/filter_bar/index.dart';
 import 'package:hook_up_rent/widgets/root_list_item_widget.dart';
 import 'package:hook_up_rent/widgets/search_bar/index.dart';
+
+import '../../../widgets/common_floating_button.dart';
+import '../../room_manage/operation.dart';
 
 class TabSearch extends StatefulWidget {
   const TabSearch({Key? key}) : super(key: key);
@@ -13,9 +18,28 @@ class TabSearch extends StatefulWidget {
 }
 
 class _TabSearchState extends State<TabSearch> {
+
+  List<RoomListItemData> availableDataList = [];
+  _getData() async {
+    var dataList = await Firestore.getAllEntries();
+    setState(() {
+      availableDataList = dataList;
+    });
+  }
+
+  @override
+  void initState() {
+    Timer(Duration.zero, _getData);
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: CommonFloatingActionButton(
+        'Post',
+            () => Navigator.pushNamed(context, 'room_manage/room_add'),
+      ),
       endDrawer: const FilterDrawer(),
       appBar: AppBar(
         // 去除 endDrawer 的默认按钮
@@ -39,9 +63,9 @@ class _TabSearchState extends State<TabSearch> {
           ),
           Expanded(
               child: ListView(
-                  children: dataList
+                  children: availableDataList
                       .map((item) => RoomListItemWidget(data: item))
-                      .toList()))
+                      .toList())),
         ],
       ),
     );

@@ -39,7 +39,7 @@ var defaultData = RoomDetailData(
     price: 3000,
     oriented: ['南'],
     roomType: '三室',
-    appliances: ['衣柜', '洗衣机'],
+    appliances: ['AC', 'TV'],
     tags: ["近地铁", "集中供暖", "新上", "随时看房"],
     houseImgs: [
       'http://ww3.sinaimg.cn/large/006y8mN6ly1g6e2tdgve1j30ku0bsn75.jpg',
