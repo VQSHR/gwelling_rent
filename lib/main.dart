@@ -9,8 +9,7 @@ import 'package:firebase_ui_auth/firebase_ui_auth.dart'; // new
 import 'package:provider/provider.dart';                 // new
 
 import 'firebase_options.dart';                          // new
-// import 'src/authentication.dart';                        // new
-// import 'src/widgets.dart';
+
 
 // 程序入口
 void main() {

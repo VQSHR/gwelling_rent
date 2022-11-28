@@ -16,7 +16,7 @@ class SearchBar extends StatefulWidget {
       this.showLocation,
       this.goBackCallback,
       this.inputValue = '',
-      this.defaultInputValue = '请输入搜索词',
+      this.defaultInputValue = 'Enter keyword',
       this.onCancel,
       this.showMap,
       this.onSearch,

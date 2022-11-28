@@ -1,4 +1,17 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+
+List<Color?> colors = [
+  Colors.red,
+  Colors.green,
+  Colors.blue
+];
+List<Color?> backgroundColors = [
+  Colors.red[50],
+  Colors.green[50],
+  Colors.blue[50]
+];
 
 class CommonTag extends StatelessWidget {
   final String title;
@@ -13,34 +26,12 @@ class CommonTag extends StatelessWidget {
   }) : super(key: key);
 
   factory CommonTag(String title) {
-    switch (title) {
-      case '近地铁':
-        return CommonTag.origin(
-          title,
-          color: Colors.red,
-          backgroundColor: Colors.red[50],
-        );
-      case '集中供暖':
-        return CommonTag.origin(
-          title,
-          color: Colors.blue,
-          backgroundColor: Colors.blue[50],
-        );
-      case '随时看房':
-        return CommonTag.origin(
-          title,
-          color: Colors.green,
-          backgroundColor: Colors.green[50],
-        );
-      case '新上':
-        return CommonTag.origin(
-          title,
-          color: Colors.red,
-          backgroundColor: Colors.red[50],
-        );
-      default:
-        return CommonTag.origin(title);
-    }
+    var rand = Random().nextInt(3);
+    return CommonTag.origin(
+      title,
+      color: colors[rand],
+      backgroundColor: backgroundColors[rand],
+    );
   }
 
   @override

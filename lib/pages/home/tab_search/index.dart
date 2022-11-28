@@ -40,9 +40,8 @@ class _TabSearchState extends State<TabSearch> {
         'Post',
             () => Navigator.pushNamed(context, 'room_manage/room_add'),
       ),
-      endDrawer: const FilterDrawer(),
+      endDrawer: const FilterDrawer(),// 去除 endDrawer 的默认按钮
       appBar: AppBar(
-        // 去除 endDrawer 的默认按钮
         actions: [Container()],
         elevation: 0,
         // backgroundColor: Colors.white,

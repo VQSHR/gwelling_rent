@@ -31,7 +31,7 @@ class RoomListItemWidget extends StatelessWidget {
                   ),
                   Text(data.location,
                       maxLines: 1, overflow: TextOverflow.ellipsis),
-                  //Wrap(children: data.tags.map((e) => CommonTag(e)).toList()),
+                  Wrap(children: data.appliances.map((e) => CommonTag(e)).toList()),
                   Text(
                     '${data.price} USD/month',
                     style: const TextStyle(

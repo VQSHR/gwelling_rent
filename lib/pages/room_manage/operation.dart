@@ -21,4 +21,10 @@ class Firestore {
         .map((item) => RoomListItemData.fromMap(item.data()))
         .toList();
   }
+  static Future<List<RoomListItemData>> getAllEntriesSorted() async {
+    return (await FirebaseFirestore.instance.collection('rooms').orderBy('price').get())
+        .docs
+        .map((item) => RoomListItemData.fromMap(item.data()))
+        .toList();
+  }
 }
