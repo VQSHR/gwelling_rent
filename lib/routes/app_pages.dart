@@ -83,7 +83,7 @@ class AppPages {
     GetPage(
         name: Routes.PROFILE,
         page: () => ProfileScreen(
-              providers: [],
+              providers: const [],
               actions: [
                 SignedOutAction(
                   ((context) {

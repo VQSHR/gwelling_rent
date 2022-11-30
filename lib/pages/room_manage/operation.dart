@@ -5,8 +5,8 @@ import 'package:hook_up_rent/pages/home/tab_search/data_list.dart';
 
 class Firestore {
 
-  static Future<void> uploadPost(Map<String, dynamic> data) async {
-    await FirebaseFirestore.instance.collection("rooms").add(data);
+  static Future<dynamic> uploadPost(Map<String, dynamic> data) async {
+    return await FirebaseFirestore.instance.collection("rooms").add(data);
   }
 
   static Future<void> deletePost(String docId) async {
@@ -21,8 +21,8 @@ class Firestore {
         .map((item) => RoomListItemData.fromMap(item.data()))
         .toList();
   }
-  static Future<List<RoomListItemData>> getAllEntriesSorted() async {
-    return (await FirebaseFirestore.instance.collection('rooms').orderBy('price').get())
+  static Future<List<RoomListItemData>> getAllEntriesSorted(String field) async {
+    return (await FirebaseFirestore.instance.collection('rooms').orderBy(field).get())
         .docs
         .map((item) => RoomListItemData.fromMap(item.data()))
         .toList();

@@ -60,7 +60,7 @@ class _RoomAddPageState extends State<RoomAddPage> {
           'Submit',
           () {
             Timer(Duration.zero, _uploadRoomData);
-            Navigator.of(context).pop();
+            Navigator.of(context).pop(true);
           }),
       body: ListView(
         children: [
