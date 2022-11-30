@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:hook_up_rent/pages/home/tab_index/index.dart';
-import 'package:hook_up_rent/pages/home/tab_info/index.dart';
+
 import 'package:hook_up_rent/pages/home/tab_profile/index.dart';
 import 'package:hook_up_rent/pages/home/tab_search/index.dart';
 
 List tabViewList = [
   const TabIndex(),
   const TabSearch(),
-  // const TabInfo(),
   const TabProfile(),
 ];
 
 List<BottomNavigationBarItem> barItemList = [
   const BottomNavigationBarItem(label: 'Home', icon: Icon(Icons.home)),
   const BottomNavigationBarItem(label: 'Search', icon: Icon(Icons.search)),
-  // const BottomNavigationBarItem(label: 'Info', icon: Icon(Icons.info)),
   const BottomNavigationBarItem(label: 'Profile', icon: Icon(Icons.account_circle)),
 ];
 

@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:get/get.dart';
 import 'package:hook_up_rent/pages/home/tab_search/data_list.dart';
 
 class Firestore {

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:hook_up_rent/pages/utils/common_toast.dart';
 import 'package:hook_up_rent/widgets/room_appliance.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:hook_up_rent/widgets/common_floating_button.dart';
@@ -33,7 +34,6 @@ class _RoomAddPageState extends State<RoomAddPage> {
   var priceController = TextEditingController();
   var areaController = TextEditingController();
 
-
   Future<void> _uploadRoomData() async {
     final data = {
       'title': titleController.text,
@@ -42,9 +42,12 @@ class _RoomAddPageState extends State<RoomAddPage> {
       'price': num.parse(priceController.text),
       'area': num.parse(areaController.text),
       'roomType': roomTypeList[roomType],
-      'appliances': appliances.where((element) => element.isChecked)
-          .map((e) => e.title).toList(),
-      'imageUrl': 'https://tva1.sinaimg.cn/large/006y8mN6ly1g6wtu9t1kxj30lo0c7796.jpg',
+      'appliances': appliances
+          .where((element) => element.isChecked)
+          .map((e) => e.title)
+          .toList(),
+      'imageUrl':
+          'https://tva1.sinaimg.cn/large/006y8mN6ly1g6wtu9t1kxj30lo0c7796.jpg',
     };
     await Firestore.uploadPost(data);
   }
@@ -56,20 +59,31 @@ class _RoomAddPageState extends State<RoomAddPage> {
         title: const Text('Posting'),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: CommonFloatingActionButton(
-          'Submit',
-          () {
-            Timer(Duration.zero, _uploadRoomData);
-            Navigator.of(context).pop(true);
-          }),
+      floatingActionButton: CommonFloatingActionButton('Submit', () {
+        bool valid = true;
+        if (titleController.text.isEmpty) {
+          CommonToast.showToast('Title cannot be empty!');
+          valid = false;
+        }
+        if (locationController.text.isEmpty ||
+            priceController.text.isEmpty ||
+            areaController.text.isEmpty) {
+          CommonToast.showToast('Info fields cannot be empty!');
+          valid = false;
+        }
+        if (valid == true) {
+          Timer(Duration.zero, _uploadRoomData);
+          CommonToast.showToast('Room added successfully');
+          Navigator.of(context).pop(true);
+        }
+      }),
       body: ListView(
         children: [
           const CommonTitle('Info'),
           CommonFormItem(
-            label: 'Address',
-            hintText: 'Enter street address',
-            controller: locationController
-          ),
+              label: 'Address',
+              hintText: 'Enter street address',
+              controller: locationController),
           CommonNumItem(
             label: 'Rent Price',
             suffixText: 'USD/month',

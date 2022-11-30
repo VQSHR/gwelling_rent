@@ -1,9 +1,9 @@
 import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hook_up_rent/pages/home/tab_search/data_list.dart';
-import 'package:hook_up_rent/pages/home/tab_search/filter_bar/filter_drawer.dart';
-import 'package:hook_up_rent/pages/home/tab_search/filter_bar/index.dart';
+import 'package:hook_up_rent/pages/utils/common_toast.dart';
 import 'package:hook_up_rent/widgets/root_list_item_widget.dart';
 import 'package:hook_up_rent/widgets/search_bar/index.dart';
 
@@ -76,15 +76,19 @@ class _TabSearchState extends State<TabSearch> {
       floatingActionButton: CommonFloatingActionButton(
         'Post',
         () {
-          var retVal = Navigator.pushNamed(context, 'room_manage/room_add');
-          retVal.then((value) {
-            if (value == true) {
-              _getData();
-            }
-          });
+          if (FirebaseAuth.instance.currentUser == null) {
+            CommonToast.showToast('Please log in to post.');
+          } else {
+            var retVal = Navigator.pushNamed(context, 'room_manage/room_add');
+            retVal.then((value) {
+              if (value == true) {
+                _getData();
+              }
+            });
+          }
         },
       ),
-      endDrawer: const FilterDrawer(), // 去除 endDrawer 的默认按钮
+      //endDrawer: const FilterDrawer(), // 去除 endDrawer 的默认按钮
       appBar: AppBar(
         actions: [Container()],
         elevation: 0,

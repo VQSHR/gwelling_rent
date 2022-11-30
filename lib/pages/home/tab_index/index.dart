@@ -2,11 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:hook_up_rent/pages/home/info/index.dart';
-import 'package:hook_up_rent/pages/home/tab_index/index_navigator.dart';
-import 'package:hook_up_rent/pages/home/tab_index/index_recommend.dart';
 import 'package:hook_up_rent/pages/utils/common_toast.dart';
-import 'package:hook_up_rent/widgets/common_swiper.dart';
 import 'package:hook_up_rent/widgets/search_bar/index.dart';
 import 'package:geocoding/geocoding.dart';
 
@@ -36,7 +32,7 @@ class _TabIndexState extends State<TabIndex> {
       List<Location> locations = await locationFromAddress(room.location, localeIdentifier: 'en_US');
       var lat = locations[0].latitude;
       var lng = locations[0].longitude;
-      CommonToast.showToast("$lat, $lng");
+      //CommonToast.showToast("$lat, $lng");
       final marker = Marker(
         markerId: MarkerId(room.title),
         position: LatLng(lat, lng),
