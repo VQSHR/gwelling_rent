@@ -1,16 +1,18 @@
-# hook_up_rent
+# GWelling
+## Introduction
+GWelling is an apartment rental information-sharing platform. The users can:
+-Post apartment info including address, price, room size, room type, images, appliances list, etc.
+-Browse available housing on the map
+-Sort posts by apartment price, room size, room type
 
-A new Flutter project.
+##Technologies
+-Flutter
+   -Google Map Flutter
+-Firebase
+   -Firebase Auth
+   -Cloud Firestore
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Next Steps
+-Filtering 
+-More sorting options
+-Link to apartment detail on map pins
